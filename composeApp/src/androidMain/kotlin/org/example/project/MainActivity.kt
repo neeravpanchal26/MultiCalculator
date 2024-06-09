@@ -23,6 +23,10 @@ fun CalcView() {
 }
 
 @Composable
+fun CalcRow() {
+}
+
+@Composable
 fun MyApp(content: @Composable () -> Unit) {
     content()
 }
