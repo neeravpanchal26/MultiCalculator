@@ -40,7 +40,16 @@ fun CalcNumericButton() {
 }
 
 @Composable
-fun CalcOperationButton() {
+fun CalcOperationButton(operation: String, display: MutableState<String>, onClick: () -> Unit) {
+    Button(
+        onClick = {
+            display.value = operation
+            onClick()
+        },
+        modifier = Modifier.size(64.dp)
+    ) {
+        Text(text = operation)
+    }
 }
 
 @Composable
