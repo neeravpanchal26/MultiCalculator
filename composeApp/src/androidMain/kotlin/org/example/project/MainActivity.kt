@@ -23,6 +23,10 @@ fun CalcView() {
 }
 
 @Composable
+fun CalcDisplay() {
+}
+
+@Composable
 fun CalcRow() {
 }
 
