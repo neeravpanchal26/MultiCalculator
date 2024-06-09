@@ -37,9 +37,8 @@ fun CalcDisplay(display: MutableState<String>) {
             .fillMaxWidth()
     )
 }
-
 @Composable
-fun CalcRow() {
+fun CalcRow(display: MutableState<String>, startNum: Int, numButtons: Int) {
 }
 
 @Composable
