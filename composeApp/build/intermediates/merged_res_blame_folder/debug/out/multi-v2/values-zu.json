@@ -4,7 +4,24 @@
             "outputFile": "org.example.project.composeApp-mergeDebugResources-40:/values-zu/values-zu.xml",
             "map": [
                 {
-                    "source": "/Users/nsp/.gradle/caches/transforms-4/f55803a848f6848a5079de8895908ba2/transformed/ui-release/res/values-zu/values-zu.xml",
+                    "source": "C:\\Users\\Student\\.gradle\\caches\\transforms-4\\17d6867c5f4d634ffa8dcd88145883ce\\transformed\\core-1.13.0\\res\\values-zu\\values-zu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,257,356,459,565,672,785",
+                        "endColumns": "97,103,98,102,105,106,112,100",
+                        "endOffsets": "148,252,351,454,560,667,780,881"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,23",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,203,307,406,509,615,722,2047",
+                        "endColumns": "97,103,98,102,105,106,112,100",
+                        "endOffsets": "198,302,401,504,610,717,830,2143"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Student\\.gradle\\caches\\transforms-4\\f55803a848f6848a5079de8895908ba2\\transformed\\ui-release\\res\\values-zu\\values-zu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/nsp/.gradle/caches/transforms-4/510e787f0cda1638ce629556837305e9/transformed/foundation-release/res/values-zu/values-zu.xml",
+                    "source": "C:\\Users\\Student\\.gradle\\caches\\transforms-4\\510e787f0cda1638ce629556837305e9\\transformed\\foundation-release\\res\\values-zu\\values-zu.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -35,23 +52,6 @@
                         "startOffsets": "2421,2512",
                         "endColumns": "90,91",
                         "endOffsets": "2507,2599"
-                    }
-                },
-                {
-                    "source": "/Users/nsp/.gradle/caches/transforms-4/17d6867c5f4d634ffa8dcd88145883ce/transformed/core-1.13.0/res/values-zu/values-zu.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,257,356,459,565,672,785",
-                        "endColumns": "97,103,98,102,105,106,112,100",
-                        "endOffsets": "148,252,351,454,560,667,780,881"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,23",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,203,307,406,509,615,722,2047",
-                        "endColumns": "97,103,98,102,105,106,112,100",
-                        "endOffsets": "198,302,401,504,610,717,830,2143"
                     }
                 }
             ]

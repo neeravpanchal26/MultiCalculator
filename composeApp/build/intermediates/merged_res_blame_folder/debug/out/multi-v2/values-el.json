@@ -4,24 +4,7 @@
             "outputFile": "org.example.project.composeApp-mergeDebugResources-40:/values-el/values-el.xml",
             "map": [
                 {
-                    "source": "/Users/nsp/.gradle/caches/transforms-4/17d6867c5f4d634ffa8dcd88145883ce/transformed/core-1.13.0/res/values-el/values-el.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,256,356,459,567,673,790",
-                        "endColumns": "97,102,99,102,107,105,116,100",
-                        "endOffsets": "148,251,351,454,562,668,785,886"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,23",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,203,306,406,509,617,723,2053",
-                        "endColumns": "97,102,99,102,107,105,116,100",
-                        "endOffsets": "198,301,401,504,612,718,835,2149"
-                    }
-                },
-                {
-                    "source": "/Users/nsp/.gradle/caches/transforms-4/510e787f0cda1638ce629556837305e9/transformed/foundation-release/res/values-el/values-el.xml",
+                    "source": "C:\\Users\\Student\\.gradle\\caches\\transforms-4\\510e787f0cda1638ce629556837305e9\\transformed\\foundation-release\\res\\values-el\\values-el.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/Users/nsp/.gradle/caches/transforms-4/f55803a848f6848a5079de8895908ba2/transformed/ui-release/res/values-el/values-el.xml",
+                    "source": "C:\\Users\\Student\\.gradle\\caches\\transforms-4\\17d6867c5f4d634ffa8dcd88145883ce\\transformed\\core-1.13.0\\res\\values-el\\values-el.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,256,356,459,567,673,790",
+                        "endColumns": "97,102,99,102,107,105,116,100",
+                        "endOffsets": "148,251,351,454,562,668,785,886"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,23",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,203,306,406,509,617,723,2053",
+                        "endColumns": "97,102,99,102,107,105,116,100",
+                        "endOffsets": "198,301,401,504,612,718,835,2149"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Student\\.gradle\\caches\\transforms-4\\f55803a848f6848a5079de8895908ba2\\transformed\\ui-release\\res\\values-el\\values-el.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

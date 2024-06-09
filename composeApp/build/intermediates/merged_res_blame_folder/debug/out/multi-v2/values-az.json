@@ -4,24 +4,7 @@
             "outputFile": "org.example.project.composeApp-mergeDebugResources-40:/values-az/values-az.xml",
             "map": [
                 {
-                    "source": "/Users/nsp/.gradle/caches/transforms-4/17d6867c5f4d634ffa8dcd88145883ce/transformed/core-1.13.0/res/values-az/values-az.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,156,258,361,465,566,671,782",
-                        "endColumns": "100,101,102,103,100,104,110,100",
-                        "endOffsets": "151,253,356,460,561,666,777,878"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,23",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,206,308,411,515,616,721,2030",
-                        "endColumns": "100,101,102,103,100,104,110,100",
-                        "endOffsets": "201,303,406,510,611,716,827,2126"
-                    }
-                },
-                {
-                    "source": "/Users/nsp/.gradle/caches/transforms-4/f55803a848f6848a5079de8895908ba2/transformed/ui-release/res/values-az/values-az.xml",
+                    "source": "C:\\Users\\Student\\.gradle\\caches\\transforms-4\\f55803a848f6848a5079de8895908ba2\\transformed\\ui-release\\res\\values-az\\values-az.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/nsp/.gradle/caches/transforms-4/510e787f0cda1638ce629556837305e9/transformed/foundation-release/res/values-az/values-az.xml",
+                    "source": "C:\\Users\\Student\\.gradle\\caches\\transforms-4\\510e787f0cda1638ce629556837305e9\\transformed\\foundation-release\\res\\values-az\\values-az.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -52,6 +35,23 @@
                         "startOffsets": "2395,2484",
                         "endColumns": "88,93",
                         "endOffsets": "2479,2573"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Student\\.gradle\\caches\\transforms-4\\17d6867c5f4d634ffa8dcd88145883ce\\transformed\\core-1.13.0\\res\\values-az\\values-az.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,156,258,361,465,566,671,782",
+                        "endColumns": "100,101,102,103,100,104,110,100",
+                        "endOffsets": "151,253,356,460,561,666,777,878"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,23",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,206,308,411,515,616,721,2030",
+                        "endColumns": "100,101,102,103,100,104,110,100",
+                        "endOffsets": "201,303,406,510,611,716,827,2126"
                     }
                 }
             ]

@@ -10,15 +10,27 @@ import androidx.compose.ui.tooling.preview.Preview
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
-            App()
+            MyApp {
+                CalcView()
+            }
         }
     }
 }
 
-@Preview
 @Composable
-fun AppAndroidPreview() {
-    App()
+fun CalcView() {
+}
+
+@Composable
+fun MyApp(content: @Composable () -> Unit) {
+    content()
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    MyApp {
+        CalcView()
+    }
 }
