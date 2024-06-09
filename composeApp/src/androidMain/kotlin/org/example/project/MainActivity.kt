@@ -39,7 +39,18 @@ fun CalcView() {
             CalcDisplay(display)
         }
         Row(modifier = Modifier.fillMaxWidth()) {
-            CalcDisplay(display)
+            Column(modifier = Modifier.weight(1f)) {
+                CalcRow(display, 7, 3)
+                CalcRow(display, 4, 3)
+                CalcRow(display, 1, 3)
+                CalcNumericButton(0, display)
+            }
+            Column(modifier = Modifier.weight(1f)) {
+                CalcOperationButton("+", display) { }
+                CalcOperationButton("-", display) { }
+                CalcOperationButton("*", display) { }
+                CalcOperationButton("/", display) { }
+            }
         }
     }
 }
