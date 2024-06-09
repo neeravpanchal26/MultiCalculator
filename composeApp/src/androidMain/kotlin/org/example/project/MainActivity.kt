@@ -25,6 +25,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CalcView() {
+    val display = remember { mutableStateOf("0") }
 }
 
 @Composable
