@@ -27,6 +27,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CalcView() {
+
     val display = remember { mutableStateOf("0") }
 
     Column(
@@ -39,11 +40,12 @@ fun CalcView() {
             CalcDisplay(display)
         }
         Row(modifier = Modifier.fillMaxWidth()) {
-            Column(modifier = Modifier.weight(1f)) {
+            Column(modifier = Modifier.weight(3f)) {
                 CalcRow(display, 7, 3)
                 CalcRow(display, 4, 3)
                 CalcRow(display, 1, 3)
                 CalcNumericButton(0, display)
+                CalcEqualsButton(display)
             }
             Column(modifier = Modifier.weight(1f)) {
                 CalcOperationButton("+", display) { }
@@ -116,7 +118,6 @@ fun CalcEqualsButton(display: MutableState<String>) {
     Button(
         onClick = { display.value = "0" },
         modifier = Modifier
-            .fillMaxWidth()
             .padding(4.dp)
             .height(64.dp)
     ) {
