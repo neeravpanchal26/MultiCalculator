@@ -45,7 +45,9 @@ fun CalcNumericButton(number: Int, display: MutableState<String>) {
                 display.value += number
             }
         },
-        modifier = Modifier.size(64.dp) // Make buttons square
+        modifier = Modifier
+            .size(64.dp)
+            .padding(4.dp)
     ) {
         Text(text = number.toString())
     }
