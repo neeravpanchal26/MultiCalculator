@@ -36,7 +36,19 @@ fun CalcRow() {
 }
 
 @Composable
-fun CalcNumericButton() {
+fun CalcNumericButton(number: Int, display: MutableState<String>) {
+    Button(
+        onClick = {
+            if (display.value == "0") {
+                display.value = number.toString()
+            } else {
+                display.value += number
+            }
+        },
+        modifier = Modifier.size(64.dp) // Make buttons square
+    ) {
+        Text(text = number.toString())
+    }
 }
 
 @Composable
