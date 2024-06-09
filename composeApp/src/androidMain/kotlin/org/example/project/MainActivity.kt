@@ -45,6 +45,15 @@ fun CalcOperationButton() {
 
 @Composable
 fun CalcEqualsButton(display: MutableState<String>) {
+    Button(
+        onClick = { display.value = "0" },
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(4.dp)
+            .height(64.dp)
+    ) {
+        Text(text = "=")
+    }
 }
 
 @Composable
