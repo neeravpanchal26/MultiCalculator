@@ -28,7 +28,7 @@ fun CalcView() {
 }
 
 @Composable
-fun CalcDisplay() {
+fun CalcDisplay(display: MutableState<String>) {
 }
 
 @Composable
