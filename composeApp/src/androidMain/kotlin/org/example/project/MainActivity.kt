@@ -39,6 +39,10 @@ fun CalcOperationButton() {
 }
 
 @Composable
+fun CalcEqualsButton() {
+}
+
+@Composable
 fun MyApp(content: @Composable () -> Unit) {
     content()
 }
