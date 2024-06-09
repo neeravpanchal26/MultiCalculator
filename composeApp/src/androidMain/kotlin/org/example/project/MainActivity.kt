@@ -39,6 +39,17 @@ fun CalcDisplay(display: MutableState<String>) {
 }
 @Composable
 fun CalcRow(display: MutableState<String>, startNum: Int, numButtons: Int) {
+    val endNum = startNum + numButtons
+
+    Row(
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.fillMaxWidth().padding(8.dp)
+    ) {
+        for (i in startNum until endNum) {
+            CalcNumericButton(number = i, display = display)
+        }
+    }
 }
 
 @Composable
