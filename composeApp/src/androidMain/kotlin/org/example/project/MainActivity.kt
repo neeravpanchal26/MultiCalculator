@@ -89,27 +89,28 @@ fun CalcView() {
             .background(color = Color.LightGray)
             .padding(16.dp)
     ) {
-        Row(modifier = Modifier.fillMaxWidth()) {
+        Row {
             CalcDisplay(display)
         }
-        Row(modifier = Modifier.fillMaxWidth()) {
+        Row {
             Column(modifier = Modifier.weight(3f)) {
-                CalcRow(display, 7, 3)
-                CalcRow(display, 4, 3)
-                CalcRow(display, 1, 3)
-                Row(
-                    modifier = Modifier.padding(8.dp)
-                ) {
-                    CalcNumericButton(0, display)
-                    CalcEqualsButton(display)
+                for (i in 7 downTo 1 step 3) {
+                    CalcRow(
+                        onPress = { number -> numberPress(number) },
+                        startNum = i,
+                        numButtons = 3
+                    )
                 }
-
+                Row {
+                    CalcNumericButton(number = 0, onPress = { number -> numberPress(number) })
+                    CalcEqualsButton(onPress = { equalsPress() })
+                }
             }
             Column(modifier = Modifier.weight(1f)) {
-                CalcOperationButton("+", display) { operation = "+" }
-                CalcOperationButton("-", display) { operation = "-" }
-                CalcOperationButton("*", display) { operation = "*" }
-                CalcOperationButton("/", display) { operation = "/" }
+                CalcOperationButton(operation = "+", onPress = { op -> operationPress(op) })
+                CalcOperationButton(operation = "-", onPress = { op -> operationPress(op) })
+                CalcOperationButton(operation = "*", onPress = { op -> operationPress(op) })
+                CalcOperationButton(operation = "/", onPress = { op -> operationPress(op) })
             }
         }
     }
@@ -127,7 +128,7 @@ fun CalcDisplay(display: MutableState<String>) {
 }
 
 @Composable
-fun CalcRow(display: MutableState<String>, startNum: Int, numButtons: Int) {
+fun CalcRow(onPress: (number: Int) -> Unit, startNum: Int, numButtons: Int) {
     val endNum = startNum + numButtons
 
     Row(
@@ -138,20 +139,16 @@ fun CalcRow(display: MutableState<String>, startNum: Int, numButtons: Int) {
             .padding(8.dp)
     ) {
         for (i in startNum until endNum) {
-            CalcNumericButton(number = i, display = display)
+            CalcNumericButton(number = i, onPress)
         }
     }
 }
 
 @Composable
-fun CalcNumericButton(number: Int, display: MutableState<String>) {
+fun CalcNumericButton(number: Int, onPress: (number: Int) -> Unit) {
     Button(
         onClick = {
-            if (display.value == "0") {
-                display.value = number.toString()
-            } else {
-                display.value += number
-            }
+            onPress(number)
         },
         modifier = Modifier
             .size(64.dp)
@@ -162,7 +159,7 @@ fun CalcNumericButton(number: Int, display: MutableState<String>) {
 }
 
 @Composable
-fun CalcOperationButton(operation: String, display: MutableState<String>, onClick: () -> Unit) {
+fun CalcOperationButton(operation: String, onPress: (operation: String) -> Unit) {
     Row(
         horizontalArrangement = Arrangement.SpaceEvenly,
         verticalAlignment = Alignment.CenterVertically,
@@ -172,8 +169,7 @@ fun CalcOperationButton(operation: String, display: MutableState<String>, onClic
     ) {
         Button(
             onClick = {
-                display.value = operation
-                onClick()
+                onPress(operation)
             },
             modifier = Modifier
                 .size(64.dp)
@@ -185,9 +181,9 @@ fun CalcOperationButton(operation: String, display: MutableState<String>, onClic
 }
 
 @Composable
-fun CalcEqualsButton(display: MutableState<String>) {
+fun CalcEqualsButton(onPress: () -> Unit) {
     Button(
-        onClick = { display.value = "0" },
+        onClick = { onPress() },
         modifier = Modifier
             .size(64.dp)
             .padding(4.dp)
