@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.runtime.saveable.rememberSaveable
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,10 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CalcView() {
+    var leftNumber by rememberSaveable { mutableStateOf(0) }
+    var rightNumber by rememberSaveable { mutableStateOf(0) }
+    var operation by rememberSaveable { mutableStateOf("") }
+    var complete by rememberSaveable { mutableStateOf(false) }
 
     val display = remember { mutableStateOf("0") }
 
@@ -44,8 +49,12 @@ fun CalcView() {
                 CalcRow(display, 7, 3)
                 CalcRow(display, 4, 3)
                 CalcRow(display, 1, 3)
-                CalcNumericButton(0, display)
-                CalcEqualsButton(display)
+                Row(
+                    modifier = Modifier.padding(8.dp)) {
+                    CalcNumericButton(0, display)
+                    CalcEqualsButton(display)
+                }
+
             }
             Column(modifier = Modifier.weight(1f)) {
                 CalcOperationButton("+", display) { }
@@ -67,6 +76,7 @@ fun CalcDisplay(display: MutableState<String>) {
             .fillMaxWidth()
     )
 }
+
 @Composable
 fun CalcRow(display: MutableState<String>, startNum: Int, numButtons: Int) {
     val endNum = startNum + numButtons
@@ -92,9 +102,7 @@ fun CalcNumericButton(number: Int, display: MutableState<String>) {
                 display.value += number
             }
         },
-        modifier = Modifier
-            .size(64.dp)
-            .padding(4.dp)
+        modifier = Modifier.size(64.dp).padding(4.dp)
     ) {
         Text(text = number.toString())
     }
@@ -102,14 +110,20 @@ fun CalcNumericButton(number: Int, display: MutableState<String>) {
 
 @Composable
 fun CalcOperationButton(operation: String, display: MutableState<String>, onClick: () -> Unit) {
-    Button(
-        onClick = {
-            display.value = operation
-            onClick()
-        },
-        modifier = Modifier.size(64.dp)
+    Row(
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.fillMaxWidth().padding(8.dp)
     ) {
-        Text(text = operation)
+        Button(
+            onClick = {
+                display.value = operation
+                onClick()
+            },
+            modifier = Modifier.size(64.dp).padding(4.dp)
+        ) {
+            Text(text = operation)
+        }
     }
 }
 
@@ -117,9 +131,7 @@ fun CalcOperationButton(operation: String, display: MutableState<String>, onClic
 fun CalcEqualsButton(display: MutableState<String>) {
     Button(
         onClick = { display.value = "0" },
-        modifier = Modifier
-            .padding(4.dp)
-            .height(64.dp)
+        modifier = Modifier.size(64.dp).padding(4.dp)
     ) {
         Text(text = "=")
     }
