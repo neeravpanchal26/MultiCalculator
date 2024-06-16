@@ -67,6 +67,7 @@ fun CalcView() {
     }
 
     fun equalsPress() {
+        complete = true
     }
 
     Column(
