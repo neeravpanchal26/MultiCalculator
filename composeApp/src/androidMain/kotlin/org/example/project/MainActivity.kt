@@ -32,15 +32,29 @@ fun CalcView() {
     var rightNumber by rememberSaveable { mutableStateOf(0) }
     var operation by rememberSaveable { mutableStateOf("") }
     var complete by rememberSaveable { mutableStateOf(false) }
-
+    var answer by remember { mutableStateOf(0) }
+    val display = remember { mutableStateOf("0") }
+    
     if (complete && operation != "") {
         leftNumber = 0
         rightNumber = 0
         operation = ""
         complete = false
+        when (operation) {
+            "+" -> answer = leftNumber + rightNumber
+            "-" -> answer = leftNumber - rightNumber
+            "*" -> answer = leftNumber * rightNumber
+            "/" -> {
+                if (rightNumber != 0) {
+                    answer = leftNumber / rightNumber
+                } else {
+                    // Handle division by zero scenario
+                    answer = 0 // Set answer to 0 if division by zero
+                }
+            }
+        }
+        display.value = answer.toString()
     }
-    
-    val display = remember { mutableStateOf("0") }
 
     Column(
         modifier = Modifier
@@ -64,10 +78,10 @@ fun CalcView() {
 
             }
             Column(modifier = Modifier.weight(1f)) {
-                CalcOperationButton("+", display) { }
-                CalcOperationButton("-", display) { }
-                CalcOperationButton("*", display) { }
-                CalcOperationButton("/", display) { }
+                CalcOperationButton("+", display) { operation = "+" }
+                CalcOperationButton("-", display) { operation = "-" }
+                CalcOperationButton("*", display) { operation = "*" }
+                CalcOperationButton("/", display) { operation = "/" }
             }
         }
     }
