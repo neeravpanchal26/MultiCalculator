@@ -34,7 +34,7 @@ fun CalcView() {
     var complete by rememberSaveable { mutableStateOf(false) }
     var answer by remember { mutableStateOf(0) }
     val display = remember { mutableStateOf("0") }
-    
+
     if (complete && operation != "") {
         leftNumber = 0
         rightNumber = 0
@@ -54,6 +54,7 @@ fun CalcView() {
             }
         }
         display.value = answer.toString()
+    } else if (operation != "" && !complete) {
     }
 
     Column(
