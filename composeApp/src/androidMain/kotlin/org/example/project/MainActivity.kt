@@ -33,6 +33,13 @@ fun CalcView() {
     var operation by rememberSaveable { mutableStateOf("") }
     var complete by rememberSaveable { mutableStateOf(false) }
 
+    if (complete && operation != "") {
+        leftNumber = 0
+        rightNumber = 0
+        operation = ""
+        complete = false
+    }
+    
     val display = remember { mutableStateOf("0") }
 
     Column(
