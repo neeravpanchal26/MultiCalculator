@@ -60,6 +60,15 @@ fun CalcView() {
         display.value = leftNumber.toString()
     }
 
+    fun numberPress() {
+    }
+
+    fun operationPress() {
+    }
+
+    fun equalsPress() {
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
