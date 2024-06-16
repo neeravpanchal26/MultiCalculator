@@ -56,6 +56,8 @@ fun CalcView() {
         display.value = answer.toString()
     } else if (operation != "" && !complete) {
         display.value = rightNumber.toString()
+    } else {
+        display.value = leftNumber.toString()
     }
 
     Column(
