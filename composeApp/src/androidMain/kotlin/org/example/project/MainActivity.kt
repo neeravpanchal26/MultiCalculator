@@ -60,11 +60,17 @@ fun CalcView() {
         display.value = leftNumber.toString()
     }
 
-    fun numberPress(btnNum:Int) {
+    fun numberPress(btnNum: Int) {
+        if (complete) {
+            leftNumber = 0
+            rightNumber = 0
+            operation = ""
+            complete = false
+        }
     }
 
-    fun operationPress(op:String) {
-        if(!complete){
+    fun operationPress(op: String) {
+        if (!complete) {
             operation = op
         }
     }
@@ -88,7 +94,8 @@ fun CalcView() {
                 CalcRow(display, 4, 3)
                 CalcRow(display, 1, 3)
                 Row(
-                    modifier = Modifier.padding(8.dp)) {
+                    modifier = Modifier.padding(8.dp)
+                ) {
                     CalcNumericButton(0, display)
                     CalcEqualsButton(display)
                 }
@@ -122,7 +129,9 @@ fun CalcRow(display: MutableState<String>, startNum: Int, numButtons: Int) {
     Row(
         horizontalArrangement = Arrangement.SpaceEvenly,
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.fillMaxWidth().padding(8.dp)
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
     ) {
         for (i in startNum until endNum) {
             CalcNumericButton(number = i, display = display)
@@ -140,7 +149,9 @@ fun CalcNumericButton(number: Int, display: MutableState<String>) {
                 display.value += number
             }
         },
-        modifier = Modifier.size(64.dp).padding(4.dp)
+        modifier = Modifier
+            .size(64.dp)
+            .padding(4.dp)
     ) {
         Text(text = number.toString())
     }
@@ -151,14 +162,18 @@ fun CalcOperationButton(operation: String, display: MutableState<String>, onClic
     Row(
         horizontalArrangement = Arrangement.SpaceEvenly,
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier.fillMaxWidth().padding(8.dp)
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
     ) {
         Button(
             onClick = {
                 display.value = operation
                 onClick()
             },
-            modifier = Modifier.size(64.dp).padding(4.dp)
+            modifier = Modifier
+                .size(64.dp)
+                .padding(4.dp)
         ) {
             Text(text = operation)
         }
@@ -169,7 +184,9 @@ fun CalcOperationButton(operation: String, display: MutableState<String>, onClic
 fun CalcEqualsButton(display: MutableState<String>) {
     Button(
         onClick = { display.value = "0" },
-        modifier = Modifier.size(64.dp).padding(4.dp)
+        modifier = Modifier
+            .size(64.dp)
+            .padding(4.dp)
     ) {
         Text(text = "=")
     }
