@@ -63,7 +63,10 @@ fun CalcView() {
     fun numberPress() {
     }
 
-    fun operationPress() {
+    fun operationPress(op:String) {
+        if(!complete){
+            operation = op
+        }
     }
 
     fun equalsPress() {
