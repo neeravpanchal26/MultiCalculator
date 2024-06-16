@@ -60,7 +60,7 @@ fun CalcView() {
         display.value = leftNumber.toString()
     }
 
-    fun numberPress() {
+    fun numberPress(btnNum:Int) {
     }
 
     fun operationPress(op:String) {
