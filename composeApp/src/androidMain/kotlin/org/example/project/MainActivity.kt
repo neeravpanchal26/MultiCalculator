@@ -66,6 +66,10 @@ fun CalcView() {
             rightNumber = 0
             operation = ""
             complete = false
+        } else if (operation.isNotBlank() && !complete) {
+            rightNumber = rightNumber * 10 + btnNum
+        } else if (operation.isBlank() && !complete) {
+            leftNumber = leftNumber * 10 + btnNum
         }
     }
 
